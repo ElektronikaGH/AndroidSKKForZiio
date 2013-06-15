@@ -14,7 +14,7 @@ public class SKKUserDictionary extends SKKDictionary {
 	private int mCount = 0;
 
 	protected SKKUserDictionary(String dic) {
-		mDicFile = SKKUtils.removeSurplusSeparator(dic);
+		mDicFile = dic;
 
 		try {
 			mRecMan = RecordManagerFactory.createRecordManager(mDicFile);

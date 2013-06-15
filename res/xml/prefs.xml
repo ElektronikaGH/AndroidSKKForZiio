@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="SKK Preference"
+        android:title="@string/label_pref_activity"
         android:key="skk_ime_settings">
  
     <CheckBoxPreference
@@ -69,14 +69,35 @@
     </PreferenceCategory>            
 
     <PreferenceCategory
-            android:title="その他の設定"
-            android:key="misc_settings">
-    
+    		android:title="辞書"
+    		android:key="dic_settings">
+        
 	  <EditTextPreference
   		   	android:key="pref_dict_dir"
   		   	android:title="辞書ディレクトリ"
   		   	android:summary="SKK用の辞書を置くディレクトリを指定"
   	 	   	android:defaultValue="/sdcard/.skk" />
+        
+     <Preference
+			android:title="@string/label_dictool_activity"
+			android:summary="ユーザー辞書の編集" >
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="jp.elektronika.AndroidSKKForZiio"
+				android:targetClass="jp.elektronika.AndroidSKKForZiio.SKKDicTool" />
+		</Preference>
+		<Preference
+			android:title="辞書ファイル解凍"
+			android:summary="辞書ファイルを用意します" >
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="jp.elektronika.AndroidSKKForZiio"
+				android:targetClass="jp.elektronika.AndroidSKKForZiio.SKKDicExtractActivity" />
+		</Preference>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+            android:title="その他の設定"
+            android:key="misc_settings">
+    
 	  <ListPreference
    			android:key="pref_kutouten_type"
      		android:title="句読点のタイプ"
@@ -100,5 +121,6 @@
             android:persistent="true" 
             android:defaultValue="false"
             />
-    </PreferenceCategory>             
+    </PreferenceCategory>
+
 </PreferenceScreen>

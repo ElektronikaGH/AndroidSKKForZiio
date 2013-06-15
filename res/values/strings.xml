@@ -187,4 +187,34 @@
     <string name="label_alpha_key">ABC</string>
     <!-- Label for ALT modifier key.  Must be short to fit on key! -->
     <string name="label_alt_key">ALT</string>
+    
+	<string name="label_extdic_activity">辞書ファイル解凍</string>
+	<string name="label_pref_activity">SKK for Ziioの設定</string>
+	<string name="label_dictool_activity">SKK ユーザー辞書ツール</string>
+	<string name="label_import_textdic">インポート\nテキストファイル辞書</string>
+	<string name="label_import_dic">インポート\nSKK for Ziio辞書</string>
+	<string name="label_clear_userdic">ユーザー辞書初期化</string>
+	<string name="label_backup_dic">SDカードに出力</string>
+	<string name="label_no_entry_found">エントリがありません</string>
+
+	<string name="label_filechooser_save_as">名前をつけて保存</string>
+	<string name="label_filechooser_open">ファイルを開く</string>
+	<string name="error_access_failed">アクセスできません: %1$s</string>
+
+	<string name="message_extract">辞書ファイルを解凍中...</string>
+	<string name="message_cancelled">中断しました</string>
+	<string name="message_finished">解凍終了</string>
+	<string name="message_confirm_remove">このエントリを削除しますか？</string>
+	<string name="message_confirm_clear">現在のユーザー辞書の内容はすべて消去されます．よろしいですか？</string>
+	<string name="message_written_to_external_storage">ユーザー辞書をテキスト形式で保存しました: %1$s</string>
+
+	<string name="error_dic">辞書ファイルを開けません．設定画面から，「辞書ファイル解凍」を実行してください</string>
+	<string name="error_user_dic">ユーザー辞書が開けません</string>
+	<string name="error_file_not_found">ファイルがありません: %1$s</string>
+
+	<string name="label_YES">はい</string>
+	<string name="label_NO">いいえ</string>
+	<string name="label_OK">OK</string>
+	<string name="label_CANCEL">キャンセル</string>
+    
 </resources>

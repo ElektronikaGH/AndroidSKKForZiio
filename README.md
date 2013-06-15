@@ -2,6 +2,7 @@ AndroidSKKForZiio
 =================
 
 "SKK" Japanese Input Method for Android (with softkey)
+
 "SKK" 日本語入力システム for Android (with softkey)
 
 minghai 氏作のAndroid SKKを元に海月玲二氏のSKK for Android with hard-keyの成果を加え、その上に個人的に欲しかった機能を加えたものです。

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="jp.elektronika.AndroidSKKForZiio"
+      android:versionCode="9"
+      android:versionName="1.0.8">
+    <application android:label="@string/ime_name">
+        <service android:name="SoftKeyboard"
+                android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+        
+        <activity android:name="SKKPrefs" android:label="SKK Preferences">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>   
+        <activity android:name=".SKKMushroom" android:label="SKK Mushroom"
+       			android:theme="@style/Theme.Transparent">
+        </activity>   
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-sdk android:minSdkVersion="4"/>
+</manifest> 

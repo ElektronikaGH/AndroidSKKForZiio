@@ -14,9 +14,9 @@ import jdbm.helper.TupleBrowser;
 
 public class SKKDictionary {
 
-	protected static final String BTREE_NAME = "skk_dict";
-	protected static final String SYS_DICT = "skk_dict_btree";
-	protected static final String USER_DICT = "skk_userdict";
+	public static final String DICTIONARY = "skk_dict_btree";
+	public static final String USER_DICT = "skk_userdict";
+	public static final String BTREE_NAME = "skk_dict";
 	protected String mDicFile;
 
 	protected RecordManager mRecMan;
@@ -27,7 +27,7 @@ public class SKKDictionary {
 	}
 
 	protected SKKDictionary(String dic) {
-		mDicFile = dic;
+		mDicFile = SKKUtils.removeSurplusSeparator(dic);
 
 		try {
 			SKKUtils.dlog("sdcard status: " + Environment.getExternalStorageState());

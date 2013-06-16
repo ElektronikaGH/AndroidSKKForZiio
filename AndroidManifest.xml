@@ -17,6 +17,25 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>   
+		<activity android:name="SKKDicExtractActivity"
+			android:label="@string/label_extdic_activity"
+			android:configChanges="keyboard|keyboardHidden|orientation"
+			android:screenOrientation="nosensor"
+			android:theme="@android:style/Theme.Dialog" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="SKKDicTool"
+			android:label="@string/label_dictool_activity" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
+		<activity android:name="FileChooser"
+				android:configChanges="keyboard|keyboardHidden|orientation"
+				android:screenOrientation="nosensor">
+		</activity>
         <activity android:name=".SKKMushroom" android:label="SKK Mushroom"
        			android:theme="@style/Theme.Transparent">
         </activity>   

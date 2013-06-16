@@ -41,6 +41,8 @@ import android.view.inputmethod.EditorInfo;
 import static android.view.inputmethod.EditorInfo.*;
 import android.view.inputmethod.InputConnection;
 import android.widget.Toast;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -165,8 +167,8 @@ KeyboardView.OnKeyboardActionListener {
 	private StringBuilder mRegEntry = new StringBuilder();
 	private boolean isRegistering = false;
 
-	private  String DICTIONARY = SKKDictionary.SYS_DICT;
-	private  String USER_DICT = SKKDictionary.USER_DICT;
+	static final String DICTIONARY = SKKDictionary.DICTIONARY;
+	static final String USER_DICT = SKKDictionary.USER_DICT;
 	private SKKDictionary mDict;
 	private SKKUserDictionary mUserDict;
 	private int mKanaKey = 0;
@@ -241,8 +243,8 @@ KeyboardView.OnKeyboardActionListener {
 			}
 		}
 
-		mDict = new SKKDictionary(dd + "/" + DICTIONARY);
-		mUserDict = new SKKUserDictionary(dd + "/" + USER_DICT);
+		mDict = new SKKDictionary(dd + File.separator + DICTIONARY);
+		mUserDict = new SKKUserDictionary(dd + File.separator + USER_DICT);
 
 		mUseVolumeButton = SKKPrefs.getPrefVolumeButton(bc);	
 	}

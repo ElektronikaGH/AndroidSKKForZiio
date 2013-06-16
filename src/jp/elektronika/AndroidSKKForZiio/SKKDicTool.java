@@ -138,7 +138,8 @@ public class SKKDicTool extends ListActivity {
 		deleteFile(USER_DICT + ".lg");
 
 		try {
-			mRecMan = RecordManagerFactory.createRecordManager(mDictDir + "/" + USER_DICT);
+			mRecMan = RecordManagerFactory.createRecordManager(
+					SKKUtils.removeSurplusSeparator(mDictDir + File.separator + USER_DICT));
 			mBtree = BTree.createInstance(mRecMan, new StringComparator());
 			mRecMan.setNamedObject(BTREE_NAME, mBtree.getRecid());
 			mRecMan.commit();
@@ -153,7 +154,8 @@ public class SKKDicTool extends ListActivity {
 
 	private void openUserDict() {
 		try {
-			mRecMan = RecordManagerFactory.createRecordManager(mDictDir + "/" + USER_DICT);
+			mRecMan = RecordManagerFactory.createRecordManager(
+					SKKUtils.removeSurplusSeparator(mDictDir + File.separator + USER_DICT));
 			mRecID = mRecMan.getNamedObject(BTREE_NAME);
 
 			if (mRecID == 0) {
@@ -165,7 +167,6 @@ public class SKKDicTool extends ListActivity {
 		} catch (Exception e) {
 			Log.e("SKKDicTool", "openUserDict() Error: " + e.toString());
 		}
-
 		updateListItems();
 	}
 
@@ -192,17 +193,12 @@ public class SKKDicTool extends ListActivity {
 		TupleBrowser browser;
 
 		mEntryList.clear();
-		Log.d("hoge?", "hoge");
 		try {
 			browser = mBtree.browse();
 
-			int i = 0;
 			while (browser.getNext(tuple) == true) {
 				mEntryList.add(new Tuple((String)tuple.getKey(), (String)tuple.getValue()));
-				Log.d("hoge:" + tuple.getKey().toString(), tuple.getValue().toString());
-				i++;
 			}
-			Log.d("entry:", String.valueOf(i));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("SKKDicTool", "updateListItems() Error: " + e.toString());

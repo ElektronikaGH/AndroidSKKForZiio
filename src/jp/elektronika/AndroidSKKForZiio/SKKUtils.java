@@ -1,5 +1,7 @@
 package jp.elektronika.AndroidSKKForZiio;
 
+import java.io.File;
+
 import android.util.Log;
 
 public class SKKUtils {
@@ -61,7 +63,12 @@ public class SKKUtils {
 
 		return ((i == -1) ? text : text.substring(0, i));
 	}
-
+	
+	public static String removeSurplusSeparator(String str) {
+		String sepStr = File.separator;
+		return str.replaceAll(sepStr + sepStr, sepStr);
+	}
+	
 	// debug log
 	public static void dlog(String msg) {
 		if (SoftKeyboard.isDebugMode) {

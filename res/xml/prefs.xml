@@ -84,14 +84,7 @@
 			<intent android:action="android.intent.action.MAIN"
 				android:targetPackage="jp.elektronika.AndroidSKKForZiio"
 				android:targetClass="jp.elektronika.AndroidSKKForZiio.SKKDicTool" />
-		</Preference>
-		<Preference
-			android:title="辞書ファイル解凍"
-			android:summary="辞書ファイルを用意します" >
-			<intent android:action="android.intent.action.MAIN"
-				android:targetPackage="jp.elektronika.AndroidSKKForZiio"
-				android:targetClass="jp.elektronika.AndroidSKKForZiio.SKKDicExtractActivity" />
-		</Preference>
+	</Preference>
     </PreferenceCategory>
     
     <PreferenceCategory

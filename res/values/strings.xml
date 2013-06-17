@@ -204,7 +204,7 @@
 	<string name="message_extract">辞書ファイルを解凍中...</string>
 	<string name="message_cancelled">中断しました</string>
 	<string name="message_finished">解凍終了</string>
-	<string name="message_confirm_remove">このエントリを削除しますか？</string>
+	<string name="message_confirm_remove">このエントリを削除しますか？\n登録キー: </string>
 	<string name="message_confirm_clear">現在のユーザー辞書の内容はすべて消去されます．よろしいですか？</string>
 	<string name="message_written_to_external_storage">ユーザー辞書をテキスト形式で保存しました: %1$s</string>
 

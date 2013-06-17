@@ -12,8 +12,8 @@ public class SKKMushroom extends Activity {
 	public static final String ACTION_SIMEJI_MUSHROOM = "com.adamrocker.android.simeji.ACTION_INTERCEPT";
 	public static final String CATEGORY_SIMEJI_MUSHROOM = "com.adamrocker.android.simeji.REPLACE";
 
-	public static final String ACTION_BROADCAST = "jp.elektronika.AndroidSKKForZiio.ACTION_SEND";
-	public static final String CATEGORY_BROADCAST = "jp.elektronika.AndroidSKKForZiio.VALUE";
+	public static final String ACTION_BROADCAST = "jp.elektronika.AndroidSKKForZiio.MUSHROOM_SEND";
+	public static final String CATEGORY_BROADCAST = "jp.elektronika.AndroidSKKForZiio.MUSHROOM_VALUE";
 
 	public static final String REPLACE_KEY = "replace_key";
 

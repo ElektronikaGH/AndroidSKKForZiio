@@ -204,6 +204,11 @@ KeyboardView.OnKeyboardActionListener {
 		filter.addCategory(SKKMushroom.CATEGORY_BROADCAST);
 		registerReceiver(mMushroomReceiver, filter);
 
+		// register to receive mushroom
+		filter = new IntentFilter(SKKDicTool.ACTION_BROADCAST);
+		filter.addCategory(SKKDicTool.CATEGORY_BROADCAST);
+		registerReceiver(mDicToolReceiver, filter);
+
 		Context bc = getBaseContext();
 
 		String kutouten = SKKPrefs.getPrefKutoutenType(bc);
@@ -253,6 +258,7 @@ KeyboardView.OnKeyboardActionListener {
 		mUserDict.commitChanges();
 		unregisterReceiver(mReceiver);
 		unregisterReceiver(mMushroomReceiver);
+		unregisterReceiver(mDicToolReceiver);
 		super.onDestroy();
 	}
 
@@ -1660,6 +1666,21 @@ KeyboardView.OnKeyboardActionListener {
 	};
 
 
+	// receive from SKKDicTool
+	private BroadcastReceiver mDicToolReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			Bundle extras = intent.getExtras();
+			String s = extras.getString(SKKDicTool.VALUE_KEY);
+			if (s != null) {
+				// ---- reopen USER DICTIONARY
+				String dd = SKKPrefs.getPrefDictDir(getBaseContext());
+				mUserDict = new SKKUserDictionary(dd + File.separator + USER_DICT);
+			}
+		}
+	};
+
+	
 	// update flags for silent mode
 	private void updateRingerMode() {
 		if (mAudioManager == null) {

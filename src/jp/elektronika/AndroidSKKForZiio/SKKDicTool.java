@@ -39,6 +39,9 @@ import jdbm.helper.Tuple;
 import jdbm.helper.TupleBrowser;
 
 public class SKKDicTool extends ListActivity {
+	public static final String ACTION_BROADCAST ="jp.elektronika.AndroidSKKForZiio.DICTOOL_ACTION_SEND";
+	public static final String CATEGORY_BROADCAST = "jp.elektronika.AndroidSKKForZiio.DICTOOL_VALUE";
+	public static final String VALUE_KEY = "VALUE";
 	private String BTREE_NAME = SKKDictionary.BTREE_NAME;
 	private String USER_DICT = SKKDictionary.USER_DICT;
 	private RecordManager mRecMan;
@@ -179,10 +182,16 @@ public class SKKDicTool extends ListActivity {
 		} catch (Exception e) {
 			Log.e("SKKDicTool", "closeUserDict() Error: " + e.toString());
 		}
+		
+		Intent retIntent = new Intent(ACTION_BROADCAST);
+		retIntent.addCategory(CATEGORY_BROADCAST);
+		retIntent.putExtra(VALUE_KEY, "USERDICT_REOPEN");
+		sendBroadcast(retIntent);
 	}
 
 	@Override protected void onListItemClick(ListView l, View v, int position, long id) {
 		mPositionToRemove = position;
+		removeDialog(DIALOG_REMOVE_ENTRY);
 		showDialog(DIALOG_REMOVE_ENTRY);
 	}
 
@@ -384,8 +393,9 @@ public class SKKDicTool extends ListActivity {
 				.create();
 			break;
 		case DIALOG_REMOVE_ENTRY:
+			String keyStr = mEntryList.get(mPositionToRemove).getKey().toString();
 			dialog = new AlertDialog.Builder(SKKDicTool.this)
-				.setMessage(getString(R.string.message_confirm_remove))
+				.setMessage(getString(R.string.message_confirm_remove) + "\"" + keyStr + "\"")
 				.setPositiveButton(R.string.label_YES, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int b_id) {
 						try {

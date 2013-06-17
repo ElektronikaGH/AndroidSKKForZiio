@@ -1,7 +1,6 @@
 package jp.elektronika.AndroidSKKForZiio;
 
 import android.os.Environment;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;

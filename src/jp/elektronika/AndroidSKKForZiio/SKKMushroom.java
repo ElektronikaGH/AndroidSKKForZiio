@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 public class SKKMushroom extends Activity {
 	// ---- simeji mushroom

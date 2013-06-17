@@ -10,5 +10,5 @@ minghai 氏作のAndroid SKKを元に海月玲二氏のSKK for Android with hard
 
 ※詳細については https://sites.google.com/site/elekhimawari/home/android/androidskkforziio もあわせてご覧ください。
 
-現在の最新版は v1.0.8 です。
+現在の最新版は v1.1.0 です。
 binディレクトリにあるAndroidSKKForZiio.apkのところで"View Raw"ボタンを押せば.apkファイルをダウンロードできます。

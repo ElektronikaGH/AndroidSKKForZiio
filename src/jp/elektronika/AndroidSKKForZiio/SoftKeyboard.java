@@ -204,7 +204,7 @@ KeyboardView.OnKeyboardActionListener {
 		filter.addCategory(SKKMushroom.CATEGORY_BROADCAST);
 		registerReceiver(mMushroomReceiver, filter);
 
-		// register to receive mushroom
+		// register to receive DicTool
 		filter = new IntentFilter(SKKDicTool.ACTION_BROADCAST);
 		filter.addCategory(SKKDicTool.CATEGORY_BROADCAST);
 		registerReceiver(mDicToolReceiver, filter);

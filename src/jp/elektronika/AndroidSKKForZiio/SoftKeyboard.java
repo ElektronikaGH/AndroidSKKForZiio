@@ -205,8 +205,8 @@ KeyboardView.OnKeyboardActionListener {
 		registerReceiver(mMushroomReceiver, filter);
 
 		// register to receive DicTool
-		filter = new IntentFilter(SKKDicTool.ACTION_BROADCAST);
-		filter.addCategory(SKKDicTool.CATEGORY_BROADCAST);
+		filter = new IntentFilter(SKKDictDir.ACTION_BROADCAST);
+		filter.addCategory(SKKDictDir.CATEGORY_BROADCAST);
 		registerReceiver(mDicToolReceiver, filter);
 
 		Context bc = getBaseContext();
@@ -1666,16 +1666,17 @@ KeyboardView.OnKeyboardActionListener {
 	};
 
 
-	// receive from SKKDicTool
+	// receive from SKK Preference
 	private BroadcastReceiver mDicToolReceiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			Bundle extras = intent.getExtras();
-			String s = extras.getString(SKKDicTool.VALUE_KEY);
+			String s = extras.getString(SKKDictDir.VALUE_KEY);
 			if (s != null) {
-				// ---- reopen USER DICTIONARY
+				// ---- reopen DICTIONARIES
 				String dd = SKKPrefs.getPrefDictDir(getBaseContext());
 				mUserDict = new SKKUserDictionary(dd + File.separator + USER_DICT);
+				mDict = new SKKUserDictionary(dd + File.separator + DICTIONARY);
 			}
 		}
 	};

@@ -26,6 +26,12 @@
 				<action android:name="android.intent.action.MAIN"/>
 			</intent-filter>
 		</activity>
+		<activity android:name="SKKDictDir"
+			android:label="@string/label_dictdir_activity" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+			</intent-filter>
+		</activity>
 		<activity android:name="SKKDicTool"
 			android:label="@string/label_dictool_activity" >
 			<intent-filter>

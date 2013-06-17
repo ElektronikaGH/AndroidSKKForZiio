@@ -190,6 +190,7 @@
     
 	<string name="label_extdic_activity">辞書ファイル解凍</string>
 	<string name="label_pref_activity">SKK for Ziioの設定</string>
+	<string name="label_dictdir_activity">辞書ディレクトリ</string>
 	<string name="label_dictool_activity">SKK ユーザー辞書ツール</string>
 	<string name="label_import_textdic">インポート\nテキストファイル辞書</string>
 	<string name="label_import_dic">インポート\nSKK for Ziio辞書</string>

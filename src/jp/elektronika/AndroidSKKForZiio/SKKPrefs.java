@@ -2,6 +2,7 @@ package jp.elektronika.AndroidSKKForZiio;
 
 import android.os.Bundle;
 import android.content.Context;
+import android.content.SharedPreferences.Editor;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
@@ -28,6 +29,13 @@ public class SKKPrefs extends PreferenceActivity {
 
 	public static String getPrefDictDir(Context context) {
 		return PreferenceManager.getDefaultSharedPreferences(context).getString(PREFKEY_DICT_DIR, "/sdcard/.skk");
+	}
+	
+	
+	public static void setPrefDictDir(Context context, String dir) {
+		Editor e = PreferenceManager.getDefaultSharedPreferences(context).edit();
+		e.putString(PREFKEY_DICT_DIR, dir);
+		e.commit();
 	}
 
 	public static String getPrefKutoutenType(Context context) {

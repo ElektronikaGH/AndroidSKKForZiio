@@ -32,9 +32,6 @@ import jdbm.helper.Tuple;
 import jdbm.helper.TupleBrowser;
 
 public class SKKDicTool extends ListActivity {
-	public static final String ACTION_BROADCAST ="jp.elektronika.AndroidSKKForZiio.DICTOOL_ACTION_SEND";
-	public static final String CATEGORY_BROADCAST = "jp.elektronika.AndroidSKKForZiio.DICTOOL_VALUE";
-	public static final String VALUE_KEY = "VALUE";
 	private String BTREE_NAME = SKKDictionary.BTREE_NAME;
 	private String USER_DICT = SKKDictionary.USER_DICT;
 	private RecordManager mRecMan;
@@ -176,9 +173,9 @@ public class SKKDicTool extends ListActivity {
 			Log.e("SKKDicTool", "closeUserDict() Error: " + e.toString());
 		}
 		
-		Intent retIntent = new Intent(ACTION_BROADCAST);
-		retIntent.addCategory(CATEGORY_BROADCAST);
-		retIntent.putExtra(VALUE_KEY, "USERDICT_REOPEN");
+		Intent retIntent = new Intent(SKKDictDir.ACTION_BROADCAST);
+		retIntent.addCategory(SKKDictDir.CATEGORY_BROADCAST);
+		retIntent.putExtra(SKKDictDir.VALUE_KEY, "DICT_REOPEN");
 		sendBroadcast(retIntent);
 	}
 

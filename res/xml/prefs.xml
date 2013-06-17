@@ -72,11 +72,13 @@
     		android:title="辞書"
     		android:key="dic_settings">
         
-	  <EditTextPreference
-  		   	android:key="pref_dict_dir"
-  		   	android:title="辞書ディレクトリ"
-  		   	android:summary="SKK用の辞書を置くディレクトリを指定"
-  	 	   	android:defaultValue="/sdcard/.skk" />
+    <Preference
+			android:title="@string/label_dictdir_activity"
+  		   	android:summary="SKK辞書のあるディレクトリを設定" >
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="jp.elektronika.AndroidSKKForZiio"
+				android:targetClass="jp.elektronika.AndroidSKKForZiio.SKKDictDir" />
+	</Preference>
         
      <Preference
 			android:title="@string/label_dictool_activity"

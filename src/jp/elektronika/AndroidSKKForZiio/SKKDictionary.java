@@ -47,6 +47,7 @@ public class SKKDictionary {
 		ArrayList<String> list = new ArrayList<String>();
 		String[] va_array;
 
+		if (mBTree == null) return list;
 		SKKUtils.dlog("findValue(): key = " + key);
 
 		try {
@@ -78,6 +79,7 @@ public class SKKDictionary {
 		Tuple         tuple = new Tuple();
 		TupleBrowser  browser;
 
+		if (mBTree == null) return;
 		try {
 			browser = mBTree.browse(key);
 			if (browser.getNext(tuple) == false) return;

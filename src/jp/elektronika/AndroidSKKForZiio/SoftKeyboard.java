@@ -1170,7 +1170,7 @@ KeyboardView.OnKeyboardActionListener {
 		String str = composing.toString();
 		if (str.length() > 0) {
 			ArrayList<String> list = findKanji(str);
-			if (list == null)
+			if (list == null || list.size() == 0)
 				return; // FUTURE: REGISTER
 
 				mChoosedIndex = 0;
